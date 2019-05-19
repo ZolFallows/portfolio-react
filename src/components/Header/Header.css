@@ -1,0 +1,27 @@
+.header {
+    height: 80vh;
+    display: flex;
+    color: white;
+    flex-direction: column;
+    justify-content: center;
+    background: 
+    linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url("../../images/william-daigneault-1166492-unsplash.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.header-content,
+.hire {
+    margin: 15px auto;
+    width: 60vw;
+}
+
+.hire-btn {
+    padding: 14px 35px 17px 15px;
+    background: #fc3a47;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
