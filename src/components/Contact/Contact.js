@@ -27,15 +27,15 @@ export default class Contact extends Component {
         let template_params = {
             "reply_to": email.value,
             "from_name": name.value,
-            "to_name": process.env.name,
+            "to_name": process.env.REACT_APP_NAME,
             "message_html": `${message.value}. Contact ${name.value} on ${phone.value}`
          }
 
          console.log(template_params)
-
          
-         let service_id = process.env.default_service
-         let template_id = process.env.template_uoei6rVQ
+         let service_id = process.env.REACT_APP_SERVICE
+         let template_id = process.env.REACT_APP_TEMPLATE
+         console.log(service_id, template_id)
 
          emailjs
             .send(service_id, template_id, template_params)
