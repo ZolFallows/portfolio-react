@@ -24,6 +24,7 @@ h1, h2, h3, h4 {
     visibility: visible;
     transition: all 200ms ease-in;
   }
+
 .hidden {
   visibility: hidden;
   transition: all 200ms ease-out;
@@ -52,12 +53,17 @@ h1, h2, h3, h4 {
 
 .nav-mobile {
     text-align: center;
-    padding: 5px;
-    background: #8080804f;
+    background: #000000e8;
 }
 
 .nav-mobile ul {
     list-style: none;
+}
+
+.nav-mobile ul li{
+  font-size: 1rem;
+  padding: 3px 0 5px;
+  font-weight: 600;
 }
 
 .clear {
@@ -66,6 +72,7 @@ h1, h2, h3, h4 {
   background: none;
   color: white;
 }
+
 
 .white{
   position: fixed;
@@ -76,11 +83,20 @@ h1, h2, h3, h4 {
   color: black;
   height: 70px;
   display: flex;
+  flex-direction: column;
   border-bottom: 1.5px solid #67676726;
 }
 
-.selected {
+.apply {
+  background: white;
+}
+
+.nav-links ul .selected {
   border-bottom: 5px solid #fc3a47;
+}
+
+.nav-mobile ul .selected {
+  background: #fc3a47;
 }
 
 #nav-icon{
@@ -152,3 +168,29 @@ h1, h2, h3, h4 {
     transform: rotate(-135deg);
   }
   
+
+  
+  /* =========================Tablets and Ipads========================== */
+  
+@media only screen and (max-width: 1024px) {
+  .nav-wrapper {
+    width: 80vw;
+}
+}
+
+/* =====================Low res tablets and Mobiles========================= */
+
+
+@media only screen and (max-width: 767px) {
+  
+  .nav-wrapper {
+    width: 85vw;
+  }
+}
+
+
+@media only screen and (max-width: 480px) {
+  .nav-wrapper {
+    width: 90vw;
+  }
+}

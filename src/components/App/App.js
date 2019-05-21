@@ -3,8 +3,10 @@ import Navbar from '../Navbar/Navbar'
 import Header from '../Header/Header'
 import Projects from '../Projects/Projects'
 import Contact from '../Contact/Contact'
+import Footer from '../Footer/Footer'
 // import Map from '../Map/Map'
 import './App.css';
+
 
 export default class App extends Component {
   constructor(){
@@ -34,22 +36,17 @@ export default class App extends Component {
   trackScrolling = () => {
     const homeNode = this.homeRef.current
     const projectNode = this.projectsRef.current
-    // const contactNode = this.contactRef.current
     let homeBottom = homeNode.offsetHeight
     let projectBotttom = homeBottom + projectNode.offsetHeight
-    // let contactBottom = projectBotttom + contactNode.offsetHeight
 
-    // console.log('header height: ', homeBottom)
-    // console.log('window pos: ', window.scrollY)
     if (window.scrollY < homeBottom) {
-      // console.log('header bottom NOT reached')
       this.setLocation('home')
     }
     if(window.scrollY > homeBottom && window.scrollY < projectBotttom){
       this.setLocation('projects')
     }
 
-    if(window.scrollY > projectBotttom){
+    if(window.scrollY > projectBotttom-60){
       this.setLocation('contact')
     }
 
@@ -65,16 +62,18 @@ export default class App extends Component {
       top = this.homeRef.current.offsetTop
     }
     if(loc === 'projects') {
-      top = this.projectsRef.current.offsetTop
+      top = this.projectsRef.current.offsetTop - 60
+      console.log(top)
     }
     if(loc === 'contact') {
       top = this.contactRef.current.offsetTop
     }
-    this.setLocation(loc)
     window.scrollTo({
       top, 
       behavior: "smooth" 
     })
+
+    this.setLocation(loc)
   }
 
   render(){
@@ -84,6 +83,7 @@ export default class App extends Component {
         <Header homeRef={this.homeRef} handleTo={this.handleTo}/>
         <Projects projectsRef={this.projectsRef} />
         <Contact contactRef={this.contactRef} />
+        <Footer />
       </div>
     )
   }

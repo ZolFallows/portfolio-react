@@ -48,7 +48,7 @@ export default class Navbar extends Component {
         let selected = this.props.current 
         return (
             <div className={classname}>
-                <ul>
+                <ul className={selected !== 'home'? 'apply' : ''}>
                     <li className={selected === 'home'? 'selected' : ''} onClick={() => this.props.handleTo('home')}>Home</li>
                     <li className={selected === 'projects'? 'selected' : ''} onClick={() => this.props.handleTo('projects')}>Project</li>
                     <li className={selected === 'contact'? 'selected' : ''} onClick={() => this.props.handleTo('contact')}>Contact</li>
@@ -71,8 +71,8 @@ export default class Navbar extends Component {
     }
 
     render(){
-        let show = this.state.show ? "active" : "hidden"
-        let selected = this.props.current === 'home' ? 'clear' : `${show} white fixed`;
+        // let show = this.state.show ? "active" : "hidden"
+        let selected = this.props.current === 'home' ? 'clear' : `white`;
 
         return (
             <React.Fragment>
